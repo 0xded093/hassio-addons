@@ -1,0 +1,38 @@
+---
+version: 1.0.0
+slug: blobsaver
+name: blobsaver
+description: blobsaver
+url: https://github.com/dedins/hassio-addons-dev/blobsaver
+codenotary: notary@home-assistant.io
+advanced: true
+map: 
+  - share:rw
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+host_network: false
+options:
+  save_path: /share/blobs/${DeviceIdentifier}/${MajorVersion}/${FullVersionString}
+  background_save: true
+  include_betas: true
+  devices:
+    - name: iPhoneX
+      device_id: iPhone14,2
+      ecid: 835FF290227123R
+      generator: "0x00000000000"
+      apnonce: ee1ec7092ee1ec7092ee1
+schema:
+  save_path: str
+  background_save: bool
+  include_betas: bool
+  devices:
+    - name: str
+      device_id: str
+      ecid: str
+      generator: str
+      apnonce: str
+startup: system
