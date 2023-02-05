@@ -3,7 +3,7 @@ version: 1.0.0
 slug: blobsaver
 name: blobsaver
 description: blobsaver
-url: https://github.com/dedins/hassio-addons-dev/blobsaver
+url: https://github.com/dedins/hassio-addons/tree/main/blobsaver
 codenotary: notary@home-assistant.io
 advanced: true
 map: 
