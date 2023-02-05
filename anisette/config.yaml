@@ -3,7 +3,7 @@ version: 1.0.0
 slug: anisette
 name: anisette
 description: anisette
-url: https://github.com/dedins/hassio-addons-dev/anisette
+url: https://github.com/dedins/hassio-addons/tree/main/anisette
 ingress: true
 ingress_port: 6969
 webui: "http://[HOST]:[PORT:6969]"
