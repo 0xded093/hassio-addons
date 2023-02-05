@@ -3,7 +3,7 @@ version: 1.0.0
 slug: stremio
 name: stremio
 description: Stremio server with fixes
-url: https://github.com/dedins/hassio-addons/stremio
+url: https://github.com/dedins/hassio-addons/tree/main/stremio
 ingress: true
 ingress_port: 11470
 webui: "http://[HOST]:[PORT:11470]"
