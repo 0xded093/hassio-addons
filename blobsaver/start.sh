@@ -69,12 +69,9 @@ for device in $(bashio::config 'devices|keys'); do
     ./bin/blobsaver --enable-background $(bashio::config "devices[${device}].name")
 done
 
-sleep 9999999
-
-bashio::log.info "Creating cron job"
+bashio::log.info "Creating blobsaver cron job"
 cron_str=$(bashio::config "cron_str")
-echo "$cron_str /app/bin/blobsaver --background-autosave" > /etc/crontabs/root
+echo "$cron_str /app/bin/blobsaver --background-autosave" > /var/spool/cron/crontabs/root
 
-bashio::log.info "Starting blobsaver service..."
-rc-service crond start && rc-update add crond
-
+bashio::log.info "Starting crond..."
+crond -f
