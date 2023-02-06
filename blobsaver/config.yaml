@@ -34,5 +34,5 @@ schema:
       ecid: str
       generator: str
       apnonce: str
-      enabled: booo
+      enabled: bool
 startup: system
