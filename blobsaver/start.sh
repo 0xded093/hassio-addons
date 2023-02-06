@@ -75,5 +75,4 @@ echo "$cron_str /app/bin/blobsaver --background-autosave" > /etc/crontabs/root
 
 bashio::log.info "Starting blobsaver service..."
 rc-service crond start && rc-update add crond
-./bin/blobsaver --background-autosave
 
