@@ -1,5 +1,5 @@
 ---
-version: 1.0.0
+version: 1.0.1
 slug: blobsaver
 name: blobsaver
 description: blobsaver
@@ -17,7 +17,6 @@ arch:
 host_network: false
 options:
   save_path: /share/blobs/${DeviceIdentifier}/${MajorVersion}/${FullVersionString}
-  background_save: true
   include_betas: true
   devices:
     - name: iPhoneX
@@ -25,9 +24,9 @@ options:
       ecid: 835FF290227123R
       generator: "0x00000000000"
       apnonce: ee1ec7092ee1ec7092ee1
+      enabled: true
 schema:
   save_path: str
-  background_save: bool
   include_betas: bool
   devices:
     - name: str
@@ -35,4 +34,5 @@ schema:
       ecid: str
       generator: str
       apnonce: str
+      enabled: booo
 startup: system
