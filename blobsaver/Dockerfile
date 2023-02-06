@@ -14,6 +14,7 @@ RUN export LD_LIBRARY_PATH=./lib/
 
 RUN apk add --no-cache openrc bash nano busybox-initscripts
 RUN openrc ; touch /run/openrc/softlevel 
+RUN mkdir -p /var/spool/cron/crontabs/; touch /var/spool/cron/crontabs/root
 
 RUN wget https://github.com/airsquared/blobsaver/releases/download/v3.5.0/blobsaver-3.5.0.tar.gz
 RUN tar xvf blobsaver-3.5.0.tar.gz
