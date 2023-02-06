@@ -18,6 +18,7 @@ host_network: false
 options:
   save_path: /share/blobs/${DeviceIdentifier}/${MajorVersion}/${FullVersionString}
   include_betas: true
+  cron_str: "*/1 * * * *"
   devices:
     - name: iPhoneX
       device_id: iPhone14,2
@@ -28,6 +29,7 @@ options:
 schema:
   save_path: str
   include_betas: bool
+  cron_str: str
   devices:
     - name: str
       device_id: str
