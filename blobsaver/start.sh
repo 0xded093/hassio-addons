@@ -3,7 +3,6 @@
 bashio::log.info "Loading configuration..."
 
 save_path=$(bashio::config "save_path")
-save_background==$(bashio::config "save_background") 
 include_betas=$(bashio::config "include_betas")
 
 cat >blobs.xml <<EOF
@@ -28,6 +27,7 @@ for device in $(bashio::config 'devices|keys'); do
     ecid=$(bashio::config "devices[${device}].ecid")
     generator=$(bashio::config "devices[${device}].generator")
     apnonce=$(bashio::config "devices[${device}].apnonce")
+    enabled=$(bashio::config "devices[${device}].enabled") 
 
 
     cat >>blobs.xml <<EOF
@@ -36,7 +36,7 @@ for device in $(bashio::config 'devices|keys'); do
                     <entry key="Generator" value="$generator"/>
                     <entry key="Save Path" value="$save_path"/>
                     <entry key="Apnonce" value="$apnonce"/>
-                    <entry key="Save in background" value="$save_background"/>
+                    <entry key="Save in background" value="$enabled"/>
                     <entry key="Device Identifier" value="$device_id"/>
                     <entry key="ECID" value="$ecid"/>
                     <entry key="Include Betas" value="$include_betas"/>
