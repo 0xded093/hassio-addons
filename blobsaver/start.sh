@@ -69,6 +69,8 @@ for device in $(bashio::config 'devices|keys'); do
     ./bin/blobsaver --enable-background $(bashio::config "devices[${device}].name")
 done
 
+sleep 9999999
+
 bashio::log.info "Creating cron job"
 cron_str=$(bashio::config "cron_str")
 echo "$cron_str /app/bin/blobsaver --background-autosave" > /etc/crontabs/root
