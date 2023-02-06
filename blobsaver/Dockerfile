@@ -12,6 +12,9 @@ RUN wget https://github.com/puxos/alpine-pkg-glibc/releases/download/2.30-r0-x86
 RUN apk add --allow-untrusted glibc-2.30-r0.apk glibc-bin-2.30-r0.apk glibc-dev-2.30-r0.apk glibc-i18n-2.30-r0.apk
 RUN export LD_LIBRARY_PATH=./lib/
 
+RUN apk add --no-cache openrc bash nano
+RUN openrc ; touch /run/openrc/softlevel 
+
 RUN wget https://github.com/airsquared/blobsaver/releases/download/v3.5.0/blobsaver-3.5.0.tar.gz
 RUN tar xvf blobsaver-3.5.0.tar.gz
 
