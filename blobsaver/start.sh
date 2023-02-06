@@ -70,4 +70,4 @@ for device in $(bashio::config 'devices|keys'); do
 done
 
 bashio::log.info "Starting blobsaver service..."
-while true; do ./bin/blobsaver --background-autosave; sleep 86400; done
+rc-service crond start && rc-update add crond
