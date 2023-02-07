@@ -76,5 +76,5 @@ done
 # bashio::log.info "Starting crond..."
 # crond -f
 
-bashio::log.info "Starting blobsaver service..."
-while true; do ./bin/blobsaver --background-autosave; sleep 86400; done
+bashio::log.info "Starting python scheduler..."
+python3 ./scheduler.py
