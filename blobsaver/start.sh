@@ -77,4 +77,4 @@ done
 # crond -f
 
 bashio::log.info "Starting python scheduler..."
-python3 ./scheduler.py
+/usr/bin/python3 ./scheduler.py
