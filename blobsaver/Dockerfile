@@ -16,7 +16,7 @@ RUN export LD_LIBRARY_PATH=./lib/
 ENV PYTHONUNBUFFERED=1
 RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
+RUN pip3 install --no-cache --upgrade pip setuptools schedule
 
 RUN wget https://github.com/airsquared/blobsaver/releases/download/v3.5.0/blobsaver-3.5.0.tar.gz
 RUN tar xvf blobsaver-3.5.0.tar.gz
