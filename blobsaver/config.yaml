@@ -8,14 +8,6 @@ codenotary: notary@home-assistant.io
 advanced: true
 map: 
   - share:rw
-privileged:
-  - NET_ADMIN
-  - SYS_ADMIN
-  - SYS_RAWIO
-  - SYS_NICE
-  - SYS_RESOURCE
-  - SYS_PTRACE
-  - SYS_MODULE
 arch:
   - armhf
   - armv7
