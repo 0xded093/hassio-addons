@@ -23,6 +23,8 @@ RUN tar xvf blobsaver-3.5.0.tar.gz
 
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
+COPY scheduler.py /app/scheduler.py
+RUN chmod +x /app/scheduler.py
 
 ENTRYPOINT [ "./start.sh" ]
 
