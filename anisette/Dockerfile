@@ -11,7 +11,6 @@ RUN wget https://github.com/puxos/alpine-pkg-glibc/releases/download/2.30-r0-x86
 RUN wget https://github.com/puxos/alpine-pkg-glibc/releases/download/2.30-r0-x86_64/glibc-i18n-2.30-r0.apk
 RUN apk add --allow-untrusted glibc-2.30-r0.apk glibc-bin-2.30-r0.apk glibc-dev-2.30-r0.apk glibc-i18n-2.30-r0.apk
 RUN export LD_LIBRARY_PATH=./lib/
-RUN export HOME="/share/anisette"
 
 RUN apk add libplist cmake
 RUN wget https://github.com/Dadoum/Provision/releases/download/1.1.0/anisette_server-x86_64
