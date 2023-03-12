@@ -9,4 +9,4 @@ cp -R /share/anisette/lib ./
 
 bashio::log.info "Libs loaded: $(ls lib/*/*)"
 
-./anisette_server-x86_64
+HOME="/share/anisette" ./anisette_server-x86_64
