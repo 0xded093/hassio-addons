@@ -13,7 +13,7 @@ RUN openrc ; touch /run/openrc/softlevel
 
 RUN mkdir /etc/nginx/ssl/
     
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/http.d/default.conf
 COPY start.sh /stremio/start.sh
 RUN chmod +x /stremio/start.sh
 
