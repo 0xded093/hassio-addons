@@ -26,13 +26,12 @@ RUN \
     && cd /tmp/zerotier \
     && CARGO_NET_GIT_FETCH_WITH_CLI=true make \
     && make install \
+    && cargo install zeronsd \
     \
     && apk del --no-cache --purge .build-dependencies \
     && rm -f -r \
         /root/.cargo \
         /tmp/*
-
-RUN cargo install zeronsd
 
 # Copy root filesystem
 COPY rootfs /
