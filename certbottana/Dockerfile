@@ -4,12 +4,16 @@ FROM ${BUILD_FROM}
 
 WORKDIR /app
 
-RUN apk add curl openssl python3
+ENV PYTHONUNBUFFERED=1
+RUN apk add --update --no-cache curl openssl python3 && ln -sf python3 /usr/bin/python
+RUN python3 -m ensurepip
+RUN pip3 install --no-cache --upgrade pip setuptools schedule
 
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 COPY scheduler.py /app/scheduler.py
+RUN chmod +x /app/scheduler.py
 
 ENTRYPOINT [ "./start.sh" ]
 
