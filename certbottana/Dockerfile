@@ -10,10 +10,14 @@ RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools schedule
 
 COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
-
 COPY scheduler.py /app/scheduler.py
+COPY acme_dehydrated.sh /app/acme_dehydrated.sh
+COPY curl.sh /app/curl.sh
+
+RUN chmod +x /app/start.sh
 RUN chmod +x /app/scheduler.py
+RUN chmod +x /app/acme_dehydrated.sh
+RUN chmod +x /app/curl.sh
 
 ENTRYPOINT [ "./start.sh" ]
 
