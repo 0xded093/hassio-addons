@@ -4,7 +4,7 @@ FROM ${BUILD_FROM}
 
 WORKDIR /app
 
-RUN apk add gitea
+RUN apk add curl openssl
 
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
