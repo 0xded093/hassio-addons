@@ -9,6 +9,8 @@ RUN apk add --update --no-cache curl openssl python3 && ln -sf python3 /usr/bin/
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools schedule
 
+RUN mkdir /tmp/dehydrated
+
 COPY start.sh /app/start.sh
 COPY scheduler.py /app/scheduler.py
 COPY acme_dehydrated.sh /app/acme_dehydrated.sh
