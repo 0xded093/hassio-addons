@@ -23,7 +23,8 @@ options:
   password: admin
 schema:
   work_dir: str
-  domains: str
+  domains:
+    - str
   url: str
   username: str
   password: str
