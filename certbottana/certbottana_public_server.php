@@ -1,8 +1,8 @@
 <?php
 
 define ('PATH', './.well-known/acme-challenge/');
-define ('USERNAME', 'certbot');
-define ('PASSWORD', '89cb13c2b98127e60787e453ca18d6ce2ab039f45efc41a0cab0c2107693bbc9'); 
+define ('USERNAME', getenv("USERNAME"));
+define ('PASSWORD', getenv("PASSWORD")); 
 
 $username = $_REQUEST['username'];
 $password = hash('sha256', $_REQUEST['password']);
