@@ -9,6 +9,8 @@ RUN apk add curl openssl python3
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
+COPY scheduler.py /app/scheduler.py
+
 ENTRYPOINT [ "./start.sh" ]
 
 # Build arguments
