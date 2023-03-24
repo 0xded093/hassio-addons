@@ -11,8 +11,8 @@ then
 	echo "args $@"
 	echo "filename: $3"
 	echo "content: $4"
-	curl -vvv -i -s -k -X $'POST' \
-		-H $'Host: woohoo' -H $'Content-Type: application/x-www-form-urlencoded' \
+	curl -i -s -k -X $'POST' \
+		-H $'Content-Type: application/x-www-form-urlencoded' \
 		--data "username=$username&password=$password&filename=$3&content=$4" \
 		$url
 fi
