@@ -6,14 +6,10 @@ WORKDIR /stremio
 
 ARG VERSION=master
 
-RUN apk add --no-cache openssl-dev wget ffmpeg nginx openrc bash nano nodejs
+RUN apk add --no-cache openssl-dev wget ffmpeg bash nano nodejs
 RUN wget https://dl.strem.io/four/${VERSION}/server.js
 RUN wget https://dl.strem.io/four/${VERSION}/stremio.asar
-RUN openrc ; touch /run/openrc/softlevel 
-
-RUN mkdir /etc/nginx/ssl/
     
-COPY nginx.conf /etc/nginx/http.d/default.conf
 COPY start.sh /stremio/start.sh
 RUN chmod +x /stremio/start.sh
 
