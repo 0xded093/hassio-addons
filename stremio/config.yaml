@@ -16,7 +16,7 @@ arch:
   - i386
 ports:
   11470/tcp: 11470
-  13470/tcp: 13470
+  13470/tcp: null
 ports_description:
   11470/tcp: stremio http port
   13470/tcp: stremio https port
