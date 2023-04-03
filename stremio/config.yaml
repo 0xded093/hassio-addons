@@ -4,26 +4,20 @@ slug: stremio
 name: stremio
 description: Stremio server with fixes
 url: https://github.com/dedins/hassio-addons/tree/main/stremio
-ingress: false
-ingress_port: 11470
 webui: "http://[HOST]:[PORT:11470]"
 codenotary: notary@home-assistant.io
 map: 
   - share:rw
-advanced: true
 arch:
   - armhf
   - armv7
   - aarch64
   - amd64
   - i386
-host_network: false
 ports:
   11470/tcp: 11470
   13470/tcp: 13470
 ports_description:
   11470/tcp: stremio http port
   13470/tcp: stremio https port
-privileged:
-  - NET_ADMIN
 startup: system
