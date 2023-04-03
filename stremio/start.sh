@@ -3,7 +3,7 @@
 bashio::log.info "Patching stremio server.js ..."
 
 bashio::log.info "  1) Forcing HTTPS for serverURL"
-sed -i "s~var serverUrl = encodeURIComponent( protocol + req.headers.host);~var serverUrl = encodeURIComponent( 'https://' + req.headers.host + ':13470');~g" server.js
+sed -i "s~var serverUrl = encodeURIComponent( protocol + req.headers.host);~var serverUrl = encodeURIComponent( 'https://' + req.headers.host);~g" server.js
 
 bashio::log.info "  2) Fixing unsupported media issues"
 sed -i -E "s|(var first = req\.params\.first)|if (req.params.first === 'hlsv2') { req.params.first = req.query.mediaURL.split('/')[3]; req.params.second = req.query.mediaURL.split('/')[4]; }\n    \1|" server.js
@@ -11,20 +11,6 @@ sed -i -E 's/HLS.masterMultiPlaylistMiddleware\)/HLS.masterPlaylistMiddleware\)/
 
 bashio::log.info "  3) Fixing CORS"
 sed -i 's/if (ok) enginefs.sendCORSHeaders/if (true) enginefs.sendCORSHeaders/g' server.js
-
-bashio::log.info "Loading configuration..."
-
-privkey=$(bashio::config "privkey")
-fullchain=$(bashio::config "fullchain")
-
-bashio::log.info "Importing certs from '/share/stremio' ..."
-cp /share/stremio/fullchain.pem /etc/nginx/ssl/fullchain.pem
-cp /share/stremio/privkey.pem /etc/nginx/ssl/privkey.pem
-
-bashio::log.info "Certs loaded: $(ls /etc/nginx/ssl/)"
-
-bashio::log.info "Starting nginx...)"
-rc-service nginx start
 
 bashio::log.info "Starting stremio server.js ...)"
 node server.js
