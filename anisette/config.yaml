@@ -1,29 +1,23 @@
 ---
-version: 1.0.2
+version: 1.0.3
 slug: anisette
 name: anisette
 description: anisette
 url: https://github.com/dedins/hassio-addons/tree/main/anisette
-ingress: true
-ingress_port: 6969
 webui: "http://[HOST]:[PORT:6969]"
 codenotary: notary@home-assistant.io
 map: 
   - share:rw
-advanced: true
 arch:
   - armhf
   - armv7
   - aarch64
   - amd64
   - i386
-host_network: false
 ports:
   6969/tcp: 6969
 ports_description:
   6969/tcp: anisette port
-privileged:
-  - NET_ADMIN
 options:
   lib_path: /share/anisette/lib
 schema:
