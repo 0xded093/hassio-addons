@@ -13,6 +13,8 @@ RUN wget https://dl.strem.io/four/${VERSION}/stremio.asar
 COPY start.sh /stremio/start.sh
 RUN chmod +x /stremio/start.sh
 
+ENV FFMPEG_DEBUG=1
+
 ENTRYPOINT ["./start.sh"]
 
 # Build arguments
