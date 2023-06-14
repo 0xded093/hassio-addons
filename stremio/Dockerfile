@@ -4,12 +4,12 @@ FROM ${BUILD_FROM}
 
 WORKDIR /stremio
 
-ARG VERSION=master
-
 RUN apk add --no-cache openssl-dev wget ffmpeg bash nano nodejs
-RUN wget https://dl.strem.io/four/${VERSION}/server.js
-RUN wget https://dl.strem.io/four/${VERSION}/stremio.asar
-    
+RUN wget https://github.com/Stremio/stremio-service/releases/latest/download/stremio-service-windows.zip
+RUN wget https://dl.strem.io/four/master/stremio.asar
+
+RUN unzip -p stremio-service-windows.zip server.js
+
 COPY start.sh /stremio/start.sh
 RUN chmod +x /stremio/start.sh
 
