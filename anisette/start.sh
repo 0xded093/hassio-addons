@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/usr/bin/env bash
 
 echo "Loading configuration..."
 
