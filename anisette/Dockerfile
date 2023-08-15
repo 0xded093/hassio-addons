@@ -1,18 +1,8 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base:8.2.0
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+FROM ghcr.io/hassio-addons/ubuntu-base:8.2.0
 
 WORKDIR /app
+RUN apt update && apt-get install -y cmake libplist-dev libplist3 wget
 
-RUN apk del alpine-baselayout
-RUN wget https://github.com/puxos/alpine-pkg-glibc/releases/download/2.30-r0-x86_64/glibc-2.30-r0.apk
-RUN wget https://github.com/puxos/alpine-pkg-glibc/releases/download/2.30-r0-x86_64/glibc-bin-2.30-r0.apk
-RUN wget https://github.com/puxos/alpine-pkg-glibc/releases/download/2.30-r0-x86_64/glibc-dev-2.30-r0.apk
-RUN wget https://github.com/puxos/alpine-pkg-glibc/releases/download/2.30-r0-x86_64/glibc-i18n-2.30-r0.apk
-RUN apk add --allow-untrusted glibc-2.30-r0.apk glibc-bin-2.30-r0.apk glibc-dev-2.30-r0.apk glibc-i18n-2.30-r0.apk
-RUN export LD_LIBRARY_PATH=./lib/
-
-RUN apk add libplist cmake
 RUN wget https://github.com/Dadoum/Provision/releases/download/2.2.0/anisette-server-x86_64
 RUN chmod +x ./anisette-server-x86_64
 
@@ -21,7 +11,6 @@ RUN chmod +x /app/start.sh
 
 ENTRYPOINT [ "./start.sh" ]
 
-# Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_DESCRIPTION
@@ -30,7 +19,6 @@ ARG BUILD_REF
 ARG BUILD_REPOSITORY
 ARG BUILD_VERSION
 
-# Labels
 LABEL \
     io.hass.name="${BUILD_NAME}" \
     io.hass.description="${BUILD_DESCRIPTION}" \
