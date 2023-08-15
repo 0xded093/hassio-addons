@@ -1,7 +1,7 @@
 FROM ghcr.io/hassio-addons/ubuntu-base:8.2.0
 
 WORKDIR /app
-RUN apt update && apt-get install -y cmake libplist-dev libplist3 wget
+RUN apt update && apt-get install -y cmake libplist-dev libplist3 wget libc6
 
 RUN wget https://github.com/Dadoum/Provision/releases/download/2.2.0/anisette-server-x86_64
 RUN chmod +x ./anisette-server-x86_64
