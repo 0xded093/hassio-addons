@@ -13,8 +13,8 @@ RUN apk add --allow-untrusted glibc-2.30-r0.apk glibc-bin-2.30-r0.apk glibc-dev-
 RUN export LD_LIBRARY_PATH=./lib/
 
 RUN apk add libplist cmake
-RUN wget https://github.com/Dadoum/Provision/releases/download/1.1.0/anisette_server-x86_64
-RUN chmod +x ./anisette_server-x86_64
+RUN wget https://github.com/Dadoum/Provision/releases/download/2.2.0/anisette-server-x86_64
+RUN chmod +x ./anisette-server-x86_64
 
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
