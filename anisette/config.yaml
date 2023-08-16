@@ -1,5 +1,5 @@
 ---
-version: 1.0.9
+version: 2.0.0
 slug: anisette
 name: anisette
 description: anisette
@@ -18,8 +18,4 @@ ports:
   6969/tcp: 6969
 ports_description:
   6969/tcp: anisette port
-options:
-  lib_path: /share/anisette/lib
-schema:
-  lib_path: str
 startup: system
