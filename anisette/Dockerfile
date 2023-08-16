@@ -1,12 +1,8 @@
-FROM ghcr.io/sidestore/omnisette-server:latest
+FROM dadoum/anisette-server:latest
 
-WORKDIR /app
+ENTRYPOINT [ "/opt/anisette_server" ]
 
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
-
-ENTRYPOINT [ "./start.sh" ]
-
+# Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_DESCRIPTION
@@ -15,6 +11,7 @@ ARG BUILD_REF
 ARG BUILD_REPOSITORY
 ARG BUILD_VERSION
 
+# Labels
 LABEL \
     io.hass.name="${BUILD_NAME}" \
     io.hass.description="${BUILD_DESCRIPTION}" \
