@@ -1,5 +1,8 @@
 FROM ghcr.io/serge-chat/serge:latest
 
+RUN mkdir -p /usr/src/app/weights
+RUN mkdir -p /data/db/
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
