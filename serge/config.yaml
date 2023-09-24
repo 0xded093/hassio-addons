@@ -8,6 +8,8 @@ webui: "http://[HOST]:[PORT:8008]"
 codenotary: notary@home-assistant.io
 map: 
   - share:rw
+  - usr:rw
+  - data:rw
 arch:
   - armhf
   - armv7
