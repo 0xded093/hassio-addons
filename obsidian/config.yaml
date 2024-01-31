@@ -1,11 +1,12 @@
 ---
-version: 1.0.0
+version: 1.0.1
 slug: obsidian
 name: obsidian
 description: obsidian web running on linux docker
 url: https://github.com/dedins/hassio-addons/tree/main/obsidian
 webui: "http://[HOST]:[PORT:8080]"
 codenotary: notary@home-assistant.io
+init: false
 map:
   - share:rw
 arch:
