@@ -1,0 +1,23 @@
+---
+version: 1.0.0
+slug: obsidian
+name: obsidian
+description: obsidian web running on linux docker
+url: https://github.com/dedins/hassio-addons/tree/main/obsidian
+webui: "http://[HOST]:[PORT:8080]"
+codenotary: notary@home-assistant.io
+map:
+  - share:rw
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+ports:
+  8080/tcp: 8080
+  8443/tcp: 8443
+ports_description:
+  8080/tcp: obsidian http port
+  8443/tcp: obsidian https port
+startup: system
