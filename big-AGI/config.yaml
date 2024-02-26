@@ -1,0 +1,22 @@
+---
+version: 1.0.0
+slug: big-AGI
+name: big-AGI
+description: big-AGI web running on linux docker
+url: https://github.com/dedins/hassio-addons/tree/main/big-AGI
+webui: "http://[HOST]:[PORT:8080]"
+codenotary: notary@home-assistant.io
+init: false
+map:
+  - share:rw
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+ports:
+  3000/tcp: 3000
+ports_description:
+  3000/tcp: big-AGI http port
+startup: system
