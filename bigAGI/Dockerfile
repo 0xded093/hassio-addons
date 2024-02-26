@@ -7,6 +7,8 @@ RUN apk add nodejs npm git --update-cache --repository http://dl-cdn.alpinelinux
 RUN git clone https://github.com/enricoros/big-agi.git /app
 RUN cd /app && npm install && npm run build
 
+WORKDIR /app
+
 # Copy root filesystem
 COPY rootfs /
 
