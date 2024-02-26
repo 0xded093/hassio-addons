@@ -2,7 +2,13 @@ ARG BUILD_FROM=ghcr.io/enricoros/big-agi:latest
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-ENTRYPOINT [ "/app/node_modules/.bin/next", "start" ]
+ENV NEXT_TELEMETRY_DISABLED=1
+
+RUN apk add git nodejs npm 
+RUN git clone https://github.com/enricoros/big-agi.git 
+RUN cd big-agi && npm install && npm run build
+
+ENTRYPOINT [ "/big-agi/node_modules/.bin/next" ]
 
 # Build arguments
 ARG BUILD_ARCH

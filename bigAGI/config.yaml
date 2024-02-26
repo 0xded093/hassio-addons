@@ -1,9 +1,9 @@
 ---
 version: 1.0.0
-slug: big
-name: big
-description: big
-url: https://github.com/dedins/hassio-addons/tree/main/big
+slug: big-AGI
+name: big-AGI
+description: big-AGI
+url: https://github.com/dedins/hassio-addons/tree/main/bigAGI
 webui: "http://[HOST]:[PORT:3000]"
 codenotary: notary@home-assistant.io
 arch:
@@ -15,5 +15,5 @@ arch:
 ports:
   3000/tcp: 3000
 ports_description:
-  3000/tcp: big port
+  3000/tcp: big-AGI port
 startup: system
