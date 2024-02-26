@@ -1,7 +1,5 @@
 FROM ghcr.io/enricoros/big-agi:latest
 
-EXPOSE 3000
-
 ENTRYPOINT [ "next", "start", "-p", "3000" ]
 
 # Build arguments
