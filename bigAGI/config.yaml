@@ -1,9 +1,9 @@
 ---
 version: 1.0.0
-slug: bigAGI
-name: bigAGI
-description: bigAGI
-url: https://github.com/dedins/hassio-addons/tree/main/bigAGI
+slug: bigagi
+name: bigagi
+description: bigagi
+url: https://github.com/dedins/hassio-addons/tree/main/bigagi
 webui: "http://[HOST]:[PORT:3000]"
 codenotary: notary@home-assistant.io
 arch:
@@ -15,5 +15,5 @@ arch:
 ports:
   3000/tcp: 3000
 ports_description:
-  3000/tcp: bigAGI port
+  3000/tcp: bigagi port
 startup: system
