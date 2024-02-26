@@ -3,7 +3,7 @@ FROM $BUILD_FROM
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN apk add git nodejs npm 
+RUN apk add nodejs npm git --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main --allow-untrusted
 RUN git clone https://github.com/enricoros/big-agi.git 
 RUN cd big-agi && npm install && npm run build
 
