@@ -4,8 +4,8 @@ FROM $BUILD_FROM
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN apk add nodejs npm git --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main --allow-untrusted
-RUN git clone https://github.com/enricoros/big-agi.git 
-RUN cd big-agi && npm install && npm run build
+RUN git clone https://github.com/enricoros/big-agi.git /app
+RUN cd /app && npm install && npm run build
 
 # Copy root filesystem
 COPY rootfs /
