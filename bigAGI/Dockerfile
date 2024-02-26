@@ -2,8 +2,6 @@ ARG BUILD_FROM=ghcr.io/enricoros/big-agi:latest
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
-ENTRYPOINT [ "next", "start", "-p", "3000" ]
-
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
