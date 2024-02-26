@@ -2,6 +2,8 @@ ARG BUILD_FROM=ghcr.io/enricoros/big-agi:latest
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+ENTRYPOINT [ "/app/node_modules/.bin/next", "start" ]
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE

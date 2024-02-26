@@ -6,8 +6,6 @@ description: big
 url: https://github.com/dedins/hassio-addons/tree/main/big
 webui: "http://[HOST]:[PORT:3000]"
 codenotary: notary@home-assistant.io
-map: 
-  - share:rw
 arch:
   - armhf
   - armv7
