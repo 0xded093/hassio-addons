@@ -1,6 +1,5 @@
-ARG BUILD_FROM=ghcr.io/enricoros/big-agi:latest
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
@@ -8,7 +7,8 @@ RUN apk add git nodejs npm
 RUN git clone https://github.com/enricoros/big-agi.git 
 RUN cd big-agi && npm install && npm run build
 
-ENTRYPOINT [ "/big-agi/node_modules/.bin/next" ]
+# Copy root filesystem
+COPY rootfs /
 
 # Build arguments
 ARG BUILD_ARCH
