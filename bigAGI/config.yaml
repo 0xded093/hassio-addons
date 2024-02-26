@@ -1,13 +1,12 @@
 ---
-version: 1.0.1
-slug: bigAGI
-name: bigAGI
-description: obsidian web running on linux docker
-url: https://github.com/dedins/hassio-addons/tree/main/bigAGI
-webui: "http://[HOST]:[PORT:3001]"
+version: 1.0.0
+slug: big
+name: big
+description: big
+url: https://github.com/dedins/hassio-addons/tree/main/big
+webui: "http://[HOST]:[PORT:3000]"
 codenotary: notary@home-assistant.io
-init: false
-map:
+map: 
   - share:rw
 arch:
   - armhf
@@ -16,7 +15,7 @@ arch:
   - amd64
   - i386
 ports:
-  3001/tcp: 3001
+  3000/tcp: 3000
 ports_description:
-  3001/tcp: bigAGI http port
+  3000/tcp: big port
 startup: system
