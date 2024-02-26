@@ -1,5 +1,5 @@
 ---
-version: 1.0.1
+version: 1.0.2
 slug: bigagi
 name: bigagi
 description: bigagi
@@ -17,3 +17,4 @@ ports:
 ports_description:
   3000/tcp: bigagi port
 startup: system
+init: false
