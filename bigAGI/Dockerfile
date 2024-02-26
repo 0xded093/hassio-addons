@@ -4,9 +4,6 @@ EXPOSE 3000
 
 ENTRYPOINT [ "next", "start", "-p", "3000" ]
 
-# Define a healthcheck
-HEALTHCHECK CMD curl --fail http://localhost:3000/ || exit 1
-
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE

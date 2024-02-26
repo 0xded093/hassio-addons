@@ -1,9 +1,9 @@
 ---
-version: 1.0.3
+version: 1.0.0
 slug: bigAGI
 name: bigAGI
-description: big-AGI web running on linux docker
-url: https://github.com/dedins/hassio-addons/tree/main/big-AGI
+description: bigAGI web running on linux docker
+url: https://github.com/dedins/hassio-addons/tree/main/bigAGI
 webui: "http://[HOST]:[PORT:8080]"
 codenotary: notary@home-assistant.io
 arch:
