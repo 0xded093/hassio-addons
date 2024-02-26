@@ -1,11 +1,14 @@
 ---
-version: 1.0.0
+version: 1.0.1
 slug: bigAGI
 name: bigAGI
-description: bigAGI web running on linux docker
+description: obsidian web running on linux docker
 url: https://github.com/dedins/hassio-addons/tree/main/bigAGI
-webui: "http://[HOST]:[PORT:8080]"
+webui: "http://[HOST]:[PORT:3000]"
 codenotary: notary@home-assistant.io
+init: false
+map:
+  - share:rw
 arch:
   - armhf
   - armv7
