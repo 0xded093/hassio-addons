@@ -8,4 +8,4 @@
 bashio::log.info "Starting bigAGI ..."
 
 ## Run your program
-exec /app/node_modules/.bin/next
+exec /app/node_modules/.bin/next /app
